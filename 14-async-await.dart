@@ -1,9 +1,8 @@
-void main() {
+void main() async {
   print('Estamos a punto de pedir datos');
 
-  httpGet('https://api.nada.com/aliens').then( (data) {
-    print(data);
-  });
+  String data = await httpGet('https://api.nasa.com/aliens');
+  print(data);
 
   print('Última línea');
 }
@@ -15,3 +14,11 @@ Future<String> httpGet(String url) {
     return 'Hola mundo';
   });
 }
+
+
+// Los constructores en una clase no pueden ser asíncronos
+/* class Heroe {
+  Heroe() async {
+
+  }
+} */
